@@ -7,7 +7,6 @@
       <meta name="description" content="Edd Suarez's Portfolio">
       <meta name="robots" content="index, follow">
       <link rel="stylesheet" href="styles.css">
-      <script src="script.js" async></script>
     </head>
     <body>
         <header>
@@ -181,22 +180,31 @@
             </section>
             <section id="projects">
                 <h2>Projects</h2>
-                <div id="riceballstream">
-                    <div id="text_div">
-                        <h3>RiceBallStream</h3>
-                        <p>For this project, I was required to create a one-page functional website. The website should have a header, navigation bar, introduction, form, product display, guessing game, and footer. Everything should be functional and no place holders.
-                        I decided to enhance a website I was working on before and finally made it fully functional. This website was inspired by Crunchyroll, an anime-streaming website. I chose to do a streaming website because it is what I usually do when I'm not busy with school and work.RiceBallStream was created as an anime catalog website to help users discover and watch anime in a clean, interactive interface. The primary goal is to provide users with an engaging way to browse anime series, and letting them submit their comments through a fully validated form. I chose to display four anime series that include some of the current popular ones plus some of my favorites. In addition, the website includes a game contest where if the user guesses the generated number, they will win a 1-year premium subscription to watch anime for free.</p>
-                    </div>
-                    <div id="img_div">
-                        <img src="assets/RiceBallStream.png" alt="riceballstream full page screenshot">
-                        <div>
-                            <img src="assets/riceball2.png" alt="riceballstream screentshot of carousel">
-                            <img src="assets/riceball3.png" alt="riceballstream form success screenshot">
-                        </div>
-                    </div>
+                <div class="tab">
+                  <button class="tablinks" onclick="projectTab(event, 'riceballstream')">RiceBallStream</button>
+                  <button class="tablinks" onclick="projectTab(event, 'breadbutter')">Bread + Butter</button>
                 </div>
-                <div id="breadbutter"></div>
-                <div></div>
+                <div id="riceballstream" class="tabcontent active">
+                  <h3>RiceBallStream</h3>
+                  <p>The RiceBallStream project was developed for a coding class with the purpose of showcasing JavaScript skills including form validation, buttons, carousel display, and other functions along with HTML and CSS. My source of inspiration for this project came from another anime streaming platform, which I use pretty often. I have been working on and honing this website as it started as a project from another class a while ago, and I decided to keep working on it. It started as a simple HTML/CSS project, then I proceeded to add the JavaScript functionality like the carousel, form, and game. Finally, this project demonstrates my proficiency in JavaScript fundamentals such as DOM manipulation, event handling, form validation, and interactive random number game.
+                  </p>
+                  <div class="img-div">
+                    <img src="assets/riceball4.png" alt="landing page screenshot">
+                    <img src="assets/riceball2.png" alt="display carousel">
+                    <img src="assets/riceball3.png" alt="form and game">
+                  </div>
+                </div>
+                <div id="breadbutter" class="tabcontent">
+                  <h3>Bread + Butter</h3>
+                  <p>Bread + Butter, one of my favorite projects, was my senior capstone project. The purpose was to help a local bakery with a sudden business surge to help manager their inventory, reduce waste, and boost their sales through a pre-order online system. This concept was somewhat inspired by an app that helps businesses sell their items before discarding them. The website includes an add-to-cart button on all item cards that updates item quantity added to the cart, a cart that displays items with image, price, and quantities, plus a -/+ sign to update quantities and updates subtotal.
+                  </p>
+                  <div class="img-div">
+                    <img src="assets/homePage.png" alt="bakery home page">
+                    <img src="assets/items.png" alt="bakery items">
+                    <img src="assets/cart.png" alt="cart and items in cart">
+                    <img src="assets/about.png" alt="bakery about page">
+                  </div>
+                </div> 
             </section>
             <section id="about">
                 <h2>About</h2>
@@ -207,5 +215,6 @@
             <a href="index.html">Back to top</a>
             <a href= "mailto: edwinb94@yahoo.com">Contact</a>
         </footer>
+        <script src="script.js" async></script>
     </body>
 </html>

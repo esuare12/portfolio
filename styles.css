@@ -45,14 +45,17 @@ table {
 }
 
 :root{
-    --secondary: #be222f;
-    --bg-section: #007790;
+    --bg-secondary: #dac6a6;
+    --bg-primary: #372654;
+    --bg-card: rgba(218, 198, 166, 0.08);
+    --border: rgba(218, 198, 166, 0.2);
     --font: "Roboto Mono", monospace;
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 :root.dark{
-    --secondary: #6d6c6c;
-    --bg-section: #231f20;
+    --bg-secondary: #cdcdcd;
+    --bg-primary: #231f20;
 }
 
 .skip-content{
@@ -71,10 +74,16 @@ table {
 }
 
 body{
-    background-color: white;
-    color: white;
+    background-color: var(--bg-primary);
+    color: var(--bg-secondary);
     font-family: var(--font);
 }
+
+main{
+    width: 1100px;
+    margin: 20px auto;
+}
+
 
 header{
     margin: 0 auto;
@@ -86,8 +95,8 @@ header{
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: var(--secondary);
-  border: 1px solid var(--bg-section);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: 1.5rem;
   cursor: pointer;
 }
@@ -97,6 +106,11 @@ header{
     margin-top: 30px;
 }
 
+nav{
+    margin: 5px auto;
+    height: 30px;
+}
+
 nav ul{
     display: flex;
     flex-direction: row;
@@ -104,22 +118,25 @@ nav ul{
 }
 
 nav li{
-    background-color: var(--secondary);
-    border-radius: 7px;
     width: 100px;
-    padding: 6px 0;
+    padding: 3px 0;
     font-size: 1.2rem;
-    margin: 7px;
     text-align: center;
+    margin: 0 10px;
+}
+
+nav li:hover{
+    border: 3px solid var(--border);
+    box-shadow: 2px 2px var(--shadow-color);
 }
 
 section{
-    background-color: var(--bg-section);
-    padding: 20px;
+    margin: 20px auto;
     line-height: 1.2;
 }
 
 #headshot {
+    
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -141,7 +158,7 @@ section{
 h2{
     font-weight: bold;
     font-size: 2rem;
-    margin: 5px 0; 
+    margin: 5px 0 20px 0; 
 }
 
 h3{
@@ -150,47 +167,94 @@ h3{
     margin: 20px 0;
 }
 
-#riceballstream{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-top: 10px;
-    padding: 0 20px;
+.tab{
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
 }
 
-#riceballstream p{
+.tab button{
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    background: transparent;
+    color: var(--bg-secondary);
+    font-size: 1.7rem;
+}
+
+.tab button:hover{
+    background-color: var(--shadow-color);
+}
+
+.tab button.active{
+    background: var(--bg-secondary);
+    color: var(--bg-primary);
+    opacity: 1;
+    border-color: var(--bg-primary);
+    font-weight: 600;
+}
+
+.tabcontent {
+  display: none;
+  padding: 30px;
+  background: var(--bg-card);
+  border-radius: 0 12px 12px 12px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.4s ease;
+  margin-top: 2px;
+}
+
+.tabcontent.active{
+    display: block;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tabcontent p, #about p{
     line-height: 1.3;
     font-size: 1.2rem;
 }
 
-#img_div{
-    display: flex;
-    gap: 10px;
+.img-div{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
- #img_div div{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
- }
-
-
-#riceballstream img{
-    width: 400px;
+.img-div img{
+    width: 500px;
 }
 
 footer{
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: var(--secondary);
     height: 100px;
     gap: 10px;
     justify-content: center;
 }
 
 footer a{
+    color: var(--bg-secondary);
     text-decoration: none;
     width: 200px;
     margin: 0 auto;
+}
+
+footer a:visited{
+    color: var(--bg-secondary);
 }
